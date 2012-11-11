@@ -32,6 +32,6 @@ namespace TeamMnMGroupingWebApp.Models
         /// <summary>
         /// list of values for this object property
         /// </summary>
-        public IEnumerable<string> values { get; set; }
+        public IEnumerable<FilterValue> values { get; set; }
     }
 }

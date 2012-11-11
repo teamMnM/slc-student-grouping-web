@@ -21,7 +21,7 @@ namespace TeamMnMGroupingWebApp.Helper
 
             var displayObject = new CohortDisplayObject();
             displayObject.cohort = cohort;
-            displayObject.students = students.Result;
+            displayObject.students = from s in students.Result select s.id;
             displayObject.custom = JsonConvert.DeserializeObject<CohortCustom>(custom.Result); ;
 
             return displayObject;

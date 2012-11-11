@@ -16,7 +16,7 @@ namespace TeamMnMGroupingWebApp.Models
         /// <summary>
         /// list of students associated with the cohort
         /// </summary>
-        public IEnumerable<Student> students { get; set; }
+        public IEnumerable<string> students { get; set; }
         
         /// <summary>
         /// the data in the cohort custom entity

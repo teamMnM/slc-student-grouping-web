@@ -14,8 +14,8 @@
         <li>
             @cdo.cohort.id @cdo.cohort.cohortIdentifier @cdo.cohort.cohortDescription @cdo.cohort.cohortType @Html.ActionLink("delete", "DeleteCohort", new { id = @cdo.cohort.id })
             <div>
-                @foreach(SlcClient.Entities.Student s in cdo.students){
-                       @s.name.firstName @s.name.lastSurName                  
+                @foreach(var s in cdo.students){
+                       @s                
                 }
             </div>
         </li>

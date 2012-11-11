@@ -16,8 +16,8 @@ namespace TeamMnMGroupingWebApp.Models
         public IEnumerable<DataElement> dataElements { get; set; }
 
         /// <summary>
-        /// the base64 string lesson plan to be stored in the custom entity
+        /// lesson plan object
         /// </summary>
-        public string lessonPlan { get; set; }
+        public LessonPlan lessonPlan { get; set; }
     }
 }

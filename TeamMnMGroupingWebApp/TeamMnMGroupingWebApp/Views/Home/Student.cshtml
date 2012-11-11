@@ -12,15 +12,17 @@
 
         </li>*@
         <li>
-            @sdo.student.name.firstName @sdo.student.name.lastSurName
+            @sdo.name
             <p>
-                @foreach(SlcClient.Entities.Section s in sdo.sections){
-                       @s.course.courseTitle             
+                section: 
+                @foreach(var s in sdo.sections){
+                    @s       
                 }
             </p>
             <p>
+                title: 
                 @foreach(SlcClient.Entities.Assessment a in sdo.assessments){
-                       @a.assessmentTitle            
+                    @a.assessmentTitle       
                 }
             </p>
         </li>

@@ -9,29 +9,38 @@ namespace TeamMnMGroupingWebApp.Models
     public class StudentDisplayObject
     {
         public string id { get; set; }
+
+        /// <summary>
+        /// first name + last name
+        /// </summary>
         public string name { get; set; }
-        public List<string> disabilities { get; set; }
+
+        /// <summary>
+        /// list of disability names
+        /// </summary>
+        public IEnumerable<string> disabilities { get; set; }
+
+        /// <summary>
+        /// GPA
+        /// </summary>
         public double cumulativeGradePointAverage { get; set; }
-        
-//        -id:string
-//-name:string
-//-gradeLevel:string
-//-disabilities:List<string>
-//-sections
-//-courseTitle:string
-//-courseDescription:string
-//-subjectArea:string
-//-courseLevel:string
-//-cumulativeGradePointAverage
+
+        /// <summary>
+        /// list of sectionId's the students belong to
+        /// </summary>
+        public IEnumerable<string> sections { get; set; }
+
+        public LearningStyles learningStyles { get; set; }
+
         /// <summary>
         /// student info
         /// </summary>
-        public Student student { get; set; }
+        //public Student student { get; set; }
 
         /// <summary>
         /// sections the student in context is in
         /// </summary>
-        public IEnumerable<Section> sections { get; set; }
+        //public IEnumerable<Section> sections { get; set; }
 
         /// <summary>
         /// assessments that the student in context has taken

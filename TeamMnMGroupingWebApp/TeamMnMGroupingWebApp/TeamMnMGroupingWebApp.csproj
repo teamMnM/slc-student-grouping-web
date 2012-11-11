@@ -120,12 +120,17 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helper\CohortHelper.cs" />
+    <Compile Include="Helper\FilterHelper.cs" />
     <Compile Include="Helper\StudentHelper.cs" />
     <Compile Include="Models\CohortActionObject.cs" />
     <Compile Include="Models\CohortDisplayObject.cs" />
     <Compile Include="Models\CohortCustom.cs" />
     <Compile Include="Models\DataElement.cs" />
     <Compile Include="Models\Filter.cs" />
+    <Compile Include="Models\FilterValue.cs" />
+    <Compile Include="Models\GroupingDisplayObject.cs" />
+    <Compile Include="Models\LessonPlan.cs" />
+    <Compile Include="Models\SectionDisplayObject.cs" />
     <Compile Include="Models\StudentDisplayObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -133,6 +138,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="App_Data\Filters.txt" />
     <Content Include="App_Readme\Elmah.txt" />
     <Content Include="Global.asax" />
     <Content Include="Web.config" />
@@ -145,7 +151,6 @@
     <Content Include="Views\Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
     <Folder Include="Global\" />
   </ItemGroup>
   <ItemGroup>
@@ -170,6 +175,7 @@
     <None Include="Properties\PublishProfiles\grouptest - FTP.pubxml" />
     <None Include="Properties\PublishProfiles\grouptest - Web Deploy.pubxml" />
     <Content Include="Views\Shared\LoginError.cshtml" />
+    <Content Include="Views\Home\Group.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -101,6 +101,29 @@ namespace TeamMnMGroupingWebApp.Controllers
             
         }
 
+        public async Task<ActionResult> Group()
+        {
+            var cs = new CohortService(Session["access_token"].ToString());
+            var ss = new StudentService(Session["access_token"].ToString());
+
+            var co = GetCohorts();
+            var st = GetStudents();
+
+            await Task.WhenAll(co, st);
+
+            var cohorts = Task.WhenAll(from c in co.Result select CohortHelper.GetCohortDisplayObject(cs, c));
+            var students = Task.WhenAll(from s in st.Result select StudentHelper.GetStudentDisplayObject(ss, s));
+
+            await Task.WhenAll(cohorts, students);
+
+            var data = new GroupingDisplayObject();
+            data.cohorts = cohorts.Result;
+            data.students = students.Result;
+            data.filters = FilterHelper.InitializeFilters();
+
+            return View(data);
+        }
+
         //public async Task<string[]> CreateCustom(CohortCustom obj)
         //{
         //    var cs = new CohortService(Session["access_token"].ToString());
