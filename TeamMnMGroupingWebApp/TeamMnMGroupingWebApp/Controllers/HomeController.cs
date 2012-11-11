@@ -28,7 +28,7 @@ namespace TeamMnMGroupingWebApp.Controllers
         {           
             if (Session["access_token"] == null)
             {
-                GetToken(MAIN);
+                GetToken(MAIN);               
             }
             else
             {
@@ -123,7 +123,7 @@ namespace TeamMnMGroupingWebApp.Controllers
                 //var cs = new CohortService(Session["access_token"].ToString());
 
                 //var result = await Task.WhenAll(from c in co.Result select createMultipleAssociation(cs, c, st.Result));
-
+                var filters = Helper.FilterHelper.InitializeFilters();
                 return View(displayObj);            
         }
 

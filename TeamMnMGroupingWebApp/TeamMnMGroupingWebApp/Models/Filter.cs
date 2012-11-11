@@ -27,7 +27,7 @@ namespace TeamMnMGroupingWebApp.Models
         /// <summary>
         /// the operators that can be applied to this filter. e.g =, >, <, >=, <=, contains
         /// </summary>
-        public IEnumerable<string> operators { get; set; }
+        public string[] operators { get; set; }
 
         /// <summary>
         /// list of values for this object property

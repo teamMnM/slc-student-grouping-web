@@ -8,6 +8,21 @@ namespace TeamMnMGroupingWebApp.Models
 {
     public class StudentDisplayObject
     {
+        public string id { get; set; }
+        public string name { get; set; }
+        public List<string> disabilities { get; set; }
+        public double cumulativeGradePointAverage { get; set; }
+        
+//        -id:string
+//-name:string
+//-gradeLevel:string
+//-disabilities:List<string>
+//-sections
+//-courseTitle:string
+//-courseDescription:string
+//-subjectArea:string
+//-courseLevel:string
+//-cumulativeGradePointAverage
         /// <summary>
         /// student info
         /// </summary>
