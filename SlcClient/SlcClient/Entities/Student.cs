@@ -10,7 +10,7 @@ using System.Runtime.Serialization;
 
 namespace SlcClient.Entities
 {
-    [DataContract]
+    //[DataContract]
     public class Student
     {
         public string id { get; set; }

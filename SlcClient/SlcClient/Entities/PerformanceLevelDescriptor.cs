@@ -1,4 +1,6 @@
-﻿using SlcClient.Enum;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using SlcClient.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -27,6 +29,7 @@ namespace SlcClient.Entities
         /// <summary>
         /// A conversion of the level to a standard set of performance levels.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public PerformanceBaseType performanceBaseConversion { get; set; }
     }
 }

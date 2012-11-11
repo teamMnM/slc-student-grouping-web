@@ -65,9 +65,16 @@ namespace SlcClient.Services
         {
             var strEndPoint = Constants.Student.STUDENT_SECTION_ASSOCIATION_SECTIONS.Replace("{studentId}", studentId);
             var response = await _client.GetDataString(strEndPoint);
-            var content = await response.Content.ReadAsStringAsync();
-            var sections = JsonConvert.DeserializeObject<IEnumerable<Section>>(content);
-            return sections;
+ 
+            //forbidden access is sometimes returned
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var sections = JsonConvert.DeserializeObject<IEnumerable<Section>>(content);
+                return sections;
+            }
+            
+            return new List<Section>();
         }
 
         /// <summary>
@@ -79,9 +86,16 @@ namespace SlcClient.Services
         {
             var strEndPoint = Constants.Student.STUDENT_ASSESSMENT_ASSOCIATION_ASSESSMENTS.Replace("{studentId}", studentId);
             var response = await _client.GetDataString(strEndPoint);
-            var content = await response.Content.ReadAsStringAsync();
-            var sections = JsonConvert.DeserializeObject<IEnumerable<Assessment>>(content);
-            return sections;
+
+            //forbidden access is sometimes returned
+            if (response.StatusCode == HttpStatusCode.OK)
+            {
+                var content = await response.Content.ReadAsStringAsync();
+                var assessments = JsonConvert.DeserializeObject<IEnumerable<Assessment>>(content);
+                return assessments;
+            }
+
+            return new List<Assessment>();
         }
 
         public async Task<HttpResponseMessage> Create(Student obj)

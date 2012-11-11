@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.ComponentModel.DataAnnotations;
 
-namespace SlcClient.Enum
+namespace SlcClient.Entities
 {
     public class LearningStyles
     {

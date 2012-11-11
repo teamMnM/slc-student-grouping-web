@@ -75,5 +75,9 @@ namespace SlcClient.Entities
         /// The session associated with the section. This reference is required.
         /// </summary>
         public Session session { get; set; }
+
+        public string courseOfferingId { get; set; }
+
+        public string sessionId { get; set; }
     }
 }

@@ -1,4 +1,6 @@
-﻿using SlcClient.Enum;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using SlcClient.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -16,12 +18,14 @@ namespace SlcClient.Entities
         /// <summary>
         /// The content or subject area of an assessment, such as arts, mathematics, reading, stenography, or a foreign language.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public AcademicSubjectType academicSubject { get; set; }
 
         /// <summary>
         /// The category of an assessment based on format and content, such as "Achievement test," "Advanced placement test," 
         /// "Alternate assessment/grade-level standards," "Attitudinal test," and "Cognitive and perceptual skills test."
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public AssessmentCategoryType assessmentCategory { get; set; }
 
         /// <summary>
@@ -69,6 +73,7 @@ namespace SlcClient.Entities
         /// Identifier for whether an assessment conforms to a standard. Examples include "Local standard," 
         /// "Statewide standard," "Regional standard," "Association standard," and "School standard."
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public ContentStandardType contentStandard { get; set; }
 
         /// <summary>
@@ -76,12 +81,14 @@ namespace SlcClient.Entities
         /// this should be the highest grade level for the assessment, and the lowest grade level is provided in the "lowestGradeLevelAsssessed" attribute. 
         /// Examples include "Adult," "Prekindergarten," "First Grade," "Second Grade," and so on.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public GradeLevelType gradeLevelAssessed { get; set; }
 
         /// <summary>
         /// The lowest grade assessed when the assessments spans a range of grade levels (see "gradeLevelAssessed"), 
         /// otherwise omitted. Examples include "Adult," "Prekindergarten," "First Grade," "Second Grade," and so on.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public GradeLevelType lowestGradeLevelAssessed { get; set; }
 
         /// <summary>

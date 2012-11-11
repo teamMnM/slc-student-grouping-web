@@ -1,4 +1,6 @@
-﻿using SlcClient.Enum;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using SlcClient.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -20,6 +22,7 @@ namespace SlcClient.Entities
         /// It may be a qualitative method such as performance level descriptors or a quantitative method such as a numerical grade or cut score. 
         /// More than one type of reporting method may be used.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public AssessmentReportingMethodType assessmentReportingMethod { get; set; }
 
         /// <summary>
@@ -35,6 +38,6 @@ namespace SlcClient.Entities
         /// <summary>
         /// The performance level(s) defined for the assessment.
         /// </summary>
-        public PerformanceLevelDescriptor performanceLevelDescriptor { get; set; }
+        public List<PerformanceLevelDescriptor> performanceLevelDescriptor { get; set; }
     }
 }

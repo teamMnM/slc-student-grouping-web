@@ -1,4 +1,6 @@
-﻿using SlcClient.Enum;
+﻿using Newtonsoft.Json;
+using Newtonsoft.Json.Converters;
+using SlcClient.Enum;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -24,6 +26,7 @@ namespace SlcClient.Entities
         /// <summary>
         /// A coding scheme that is used for identification and record-keeping purposes by schools, social services, or other agencies to refer to an assessment.
         /// </summary>
+        [JsonConverter(typeof(StringEnumConverter))]
         public AssessmentIdentificationSystemType identificationSystem { get; set; }
     }
 }
