@@ -6,9 +6,11 @@ using System.ComponentModel.DataAnnotations;
 using SlcClient.Enum;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
+using System.Runtime.Serialization;
 
 namespace SlcClient.Entities
 {
+    [DataContract]
     public class Student
     {
         public string id { get; set; }

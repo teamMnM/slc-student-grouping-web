@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace SlcClient.Enum
 {
@@ -10,6 +11,7 @@ namespace SlcClient.Enum
     public enum DisabilityType
     {
         [EnumMember(Value = "Autistic/Autism")]
+        [Description("Autistic/Autism")]
         AutisticAutism,
         [EnumMember(Value = "Deaf-Blindness")]
         DeafBlindness,

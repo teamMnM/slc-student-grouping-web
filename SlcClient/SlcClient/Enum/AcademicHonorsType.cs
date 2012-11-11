@@ -3,20 +3,26 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Runtime.Serialization;
+using System.ComponentModel;
 
 namespace SlcClient.Enum
 {
     public enum AcademicHonorsType
     {
         [EnumMember(Value = "Honor roll")]
+        [Description("Honor roll")]
         Honorroll,
         [EnumMember(Value = "Honor society")]
+        [Description("Honor society")]
         HonorSociety,
         [EnumMember(Value = "Honorable mention")]
+        [Description("Honorable mention")]
         HonorableMention,
         [EnumMember(Value = "Honors program")]
+        [Description("Honors program")]
         HonorsProgram,
         [EnumMember(Value = "Prize awards")]
+        [Description("Prize awards")]
         PrizeAwards,
         [EnumMember(Value = "Scholarships")]
         Scholarships,
